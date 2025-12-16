@@ -24,7 +24,7 @@ public class TeamManagerImpl implements TeamManager {
     public static TeamManagerImpl getInstance() {
         if (instance == null) {
             instance = new TeamManagerImpl();
-            LOGGER.info("Instancia de AuthManagerImpl creado");
+            LOGGER.info("Instancia de TeamManager creado");
         }
         return instance;
     }
@@ -33,9 +33,15 @@ public class TeamManagerImpl implements TeamManager {
 
     @Override
     public List<Ranking> getTeamsRanking() {
+        LOGGER.info("Iniciando lista de rankings de usuarios");
         List<Ranking> ranking = new ArrayList<>(this.baseDeDatos.getTeamsRanking());
         ranking.sort((u1, u2) ->
                 Integer.compare(u2.getPoints(), u1.getPoints()));
+        int users = ranking.size();
+        for(int i = 0 ; i < users; i++) {
+            LOGGER.info("Lista de rankings de usuarios creado= " + ranking.get(i).getName() + " / " + ranking.get(i).getPoints());
+        }
+
         return ranking;
     }
 }

@@ -30,7 +30,7 @@
         <activity android:name=".ui.auth.LoginActivity" />
         <activity android:name=".ui.shop.ShopActivity" />
         <activity android:name=".ui.main.PortalPageActivity" />
-        <activity android:name=".ui.ranking.ViewRankingActivity" />
+        <activity android:name=".ui.rankingMinim2.ViewRankingActivityMinim2" />
         <activity android:name=".ui.profile.ViewProfileActivity" />
     </application>
 

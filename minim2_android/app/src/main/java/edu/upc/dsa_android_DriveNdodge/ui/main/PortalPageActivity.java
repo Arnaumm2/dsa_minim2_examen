@@ -24,7 +24,6 @@ public class PortalPageActivity extends AppCompatActivity {
 
         shopBttn = findViewById(R.id.shopBttn);
         perfilBttn = findViewById(R.id.perfilBttn);
-        rankBttn = findViewById(R.id.rankBttn);
         rankBttn2 = findViewById(R.id.rankBttn2);
 
         shopBttn.setOnClickListener(v -> {
