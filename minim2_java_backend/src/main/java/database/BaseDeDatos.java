@@ -1,6 +1,7 @@
 package database;
 
 import database.models.Item;
+import database.models.Ranking;
 import database.models.Usuario;
 import java.util.List;
 
@@ -15,4 +16,5 @@ public interface BaseDeDatos {
     List<Item> getItems();
     Item getItem(Integer id);
     void addItem(Item item);
+    List<Ranking> getTeamsRanking();
 }

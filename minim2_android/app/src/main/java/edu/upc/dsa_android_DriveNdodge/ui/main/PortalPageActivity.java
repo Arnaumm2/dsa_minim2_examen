@@ -8,13 +8,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import edu.upc.dsa_android_DriveNdodge.R;
 import edu.upc.dsa_android_DriveNdodge.ui.profile.ViewProfileActivity;
-import edu.upc.dsa_android_DriveNdodge.ui.ranking.ViewRankingActivity;
+
+import edu.upc.dsa_android_DriveNdodge.ui.rankingMinim2.ViewRankingActivityMinim2;
 import edu.upc.dsa_android_DriveNdodge.ui.shop.ShopActivity;
 
 
 public class PortalPageActivity extends AppCompatActivity {
 
-    private Button shopBttn, perfilBttn, rankBttn;
+    private Button shopBttn, perfilBttn, rankBttn, rankBttn2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,7 @@ public class PortalPageActivity extends AppCompatActivity {
         shopBttn = findViewById(R.id.shopBttn);
         perfilBttn = findViewById(R.id.perfilBttn);
         rankBttn = findViewById(R.id.rankBttn);
+        rankBttn2 = findViewById(R.id.rankBttn2);
 
         shopBttn.setOnClickListener(v -> {
             Intent intent = new Intent(PortalPageActivity.this, ShopActivity.class);
@@ -35,8 +37,8 @@ public class PortalPageActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        rankBttn.setOnClickListener(v -> {
-            Intent intent = new Intent(PortalPageActivity.this, ViewRankingActivity.class);
+        rankBttn2.setOnClickListener(v -> {
+            Intent intent = new Intent(PortalPageActivity.this, ViewRankingActivityMinim2.class);
             startActivity(intent);
         });
         Button logoutButton = findViewById(R.id.logoutButton);

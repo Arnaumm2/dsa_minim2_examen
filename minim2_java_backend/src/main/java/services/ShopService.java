@@ -24,6 +24,9 @@ public class ShopService {
         this.shopManager = ShopManagerImpl.getInstance();
     }
 
+
+
+
     @GET
     @Path("/items")
     @ApiOperation(value = "Obtener todos los items de la tienda")

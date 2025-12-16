@@ -2,8 +2,10 @@ package database.impl;
 
 import database.BaseDeDatos;
 import database.models.Item;
+import database.models.Ranking;
 import database.models.Usuario;
 import org.apache.log4j.Logger;
+import org.glassfish.hk2.api.Rank;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,11 +17,22 @@ public class BaseDeDatosHashMap implements BaseDeDatos {
     private static BaseDeDatosHashMap instance;
     private Map<String, Usuario> usuarios;
     private Map<Integer, Item> items;
+    private Map<Integer, Ranking> ranking;
 
     private BaseDeDatosHashMap() {
         this.usuarios = new HashMap<>();
         this.items = new HashMap<>();
+        this.ranking = new HashMap<>();
 
+        Ranking ranking1 = new Ranking("Porxinos", "https://cdn.pixabay.com/photo/2017/07/11/15/51/kermit-2493979_1280.png", 250);
+        Ranking ranking2 = new Ranking("rey", "", 200);
+        Ranking ranking3 = new Ranking("BeeMovie", "", 300);
+        Ranking ranking4 = new Ranking("Mazinger72", "https://frikanime.com/wp-content/uploads/2023/11/5386.jpg", 500);
+
+        this.ranking.put(0,ranking1);
+        this.ranking.put(1,ranking2);
+        this.ranking.put(2,ranking3);
+        this.ranking.put(3,ranking4);
         // Añadir items de prueba para DEBUG
         Item item1 = new Item(1, "Booster basic", "Un booster basico que te permite ir mas rapido durante unos segundos", 100);
         Item item2 = new Item(2, "Neumaticos avanzados", "Con estos neumaticos tienes mas agarre y velocidad augmentada", 150);
@@ -99,5 +112,8 @@ public class BaseDeDatosHashMap implements BaseDeDatos {
     public void setMonedas(String username, int monedas) {
         Usuario usuario = usuarios.get(username);
         if (usuario != null) usuario.setMonedas(monedas);
+    }
+    public List<Ranking> getTeamsRanking(){
+        return new ArrayList<>(ranking.values());
     }
 }
